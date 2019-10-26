@@ -21,7 +21,7 @@ namespace Temporizador
 {
     public partial class Form1 : Form
     {
-        int contador;
+        Double contador;
 
         public Form1()
         {
@@ -86,7 +86,7 @@ namespace Temporizador
 
         private void horas_Click(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right) contador -= 60 * 60; else contador += 60 * 60;
+            if (e.Button == MouseButtons.Right) contador -= Math.Pow(60,2); else contador += 60 * 60;
             mostrar();
         }
 
