@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.Start = new System.Windows.Forms.Button();
+            this.Stop = new System.Windows.Forms.Button();
+            this.Reset = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.minutos = new System.Windows.Forms.Button();
             this.segundos = new System.Windows.Forms.Button();
@@ -43,41 +43,41 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // button1
+            // Start
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(160)))), ((int)(((byte)(110)))));
-            this.button1.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(120, 336);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(140, 59);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.Start.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(160)))), ((int)(((byte)(110)))));
+            this.Start.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Start.Location = new System.Drawing.Point(120, 336);
+            this.Start.Name = "Start";
+            this.Start.Size = new System.Drawing.Size(140, 59);
+            this.Start.TabIndex = 0;
+            this.Start.Text = "Start";
+            this.Start.UseVisualStyleBackColor = false;
+            this.Start.Click += new System.EventHandler(this.Start_Click);
             // 
-            // button2
+            // Stop
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(120)))), ((int)(((byte)(100)))));
-            this.button2.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(548, 336);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 59);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Stop";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.Stop.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(120)))), ((int)(((byte)(100)))));
+            this.Stop.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Stop.Location = new System.Drawing.Point(548, 336);
+            this.Stop.Name = "Stop";
+            this.Stop.Size = new System.Drawing.Size(140, 59);
+            this.Stop.TabIndex = 1;
+            this.Stop.Text = "Stop";
+            this.Stop.UseVisualStyleBackColor = false;
+            this.Stop.Click += new System.EventHandler(this.Stop_Click);
             // 
-            // button3
+            // Reset
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.button3.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(334, 336);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(140, 59);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Reset";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.Reset.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.Reset.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset.Location = new System.Drawing.Point(334, 336);
+            this.Reset.Name = "Reset";
+            this.Reset.Size = new System.Drawing.Size(140, 59);
+            this.Reset.TabIndex = 2;
+            this.Reset.Text = "Reset";
+            this.Reset.UseVisualStyleBackColor = false;
+            this.Reset.Click += new System.EventHandler(this.Reset_Click);
             // 
             // label1
             // 
@@ -100,7 +100,7 @@
             this.minutos.TabIndex = 6;
             this.minutos.Text = "Minutos";
             this.minutos.UseVisualStyleBackColor = false;
-            this.minutos.Click += new System.EventHandler(this.minutos_Click);
+            this.minutos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.minutos_Click);
             // 
             // segundos
             // 
@@ -112,7 +112,7 @@
             this.segundos.TabIndex = 5;
             this.segundos.Text = "Segundos";
             this.segundos.UseVisualStyleBackColor = false;
-            this.segundos.Click += new System.EventHandler(this.segundos_Click);
+            this.segundos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.segundos_Click);
             // 
             // horas
             // 
@@ -124,7 +124,7 @@
             this.horas.TabIndex = 4;
             this.horas.Text = "Horas";
             this.horas.UseVisualStyleBackColor = false;
-            this.horas.Click += new System.EventHandler(this.horas_Click);
+            this.horas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.horas_Click);
             // 
             // Form1
             // 
@@ -134,9 +134,9 @@
             this.Controls.Add(this.minutos);
             this.Controls.Add(this.segundos);
             this.Controls.Add(this.horas);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Reset);
+            this.Controls.Add(this.Stop);
+            this.Controls.Add(this.Start);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
             this.Text = "Relógio Digital";
@@ -148,9 +148,9 @@
         #endregion
 
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button Start;
+        private System.Windows.Forms.Button Stop;
+        private System.Windows.Forms.Button Reset;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button minutos;
         private System.Windows.Forms.Button segundos;

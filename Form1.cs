@@ -27,23 +27,17 @@ namespace Temporizador
         {
             InitializeComponent();
 
-            // Carregar fonte
             LoadFont();
             label1.Font = new Font(private_fonts.Families[0], 72);
-            button1.Font = new Font(private_fonts.Families[0], 22);
-            button2.Font = new Font(private_fonts.Families[0], 22);
-            button3.Font = new Font(private_fonts.Families[0], 22);
-            horas.Font = new Font(private_fonts.Families[0], 16);
-            minutos.Font = new Font(private_fonts.Families[0], 16);
-            segundos.Font = new Font(private_fonts.Families[0], 16);
             label1.UseCompatibleTextRendering = true;
-            button1.UseCompatibleTextRendering = true;
-            button2.UseCompatibleTextRendering = true;
-            button3.UseCompatibleTextRendering = true;
-            horas.UseCompatibleTextRendering = true;
-            minutos.UseCompatibleTextRendering = true;
-            segundos.UseCompatibleTextRendering = true;
+            LCD(Start, 22); LCD(Stop, 22); LCD(Reset, 22);
+            LCD(horas, 16); LCD(minutos, 16); LCD(segundos, 16);
+        }
 
+        private void LCD(Button objeto, int tamanho)
+        {
+            objeto.Font = new Font(private_fonts.Families[0], tamanho);
+            objeto.UseCompatibleTextRendering = true;
         }
 
         // Função para adicionar fonte LCD :
@@ -69,9 +63,10 @@ namespace Temporizador
 
         private void mostrar()
         {
+            if (contador < 0) contador = 0;
             label1.Text = TimeSpan.FromSeconds(contador).ToString();
         }
-        private void button3_Click(object sender, EventArgs e)
+        private void Reset_Click(object sender, EventArgs e)
         {
             contador = 0;
             mostrar();
@@ -83,32 +78,34 @@ namespace Temporizador
             mostrar();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Start_Click(object sender, EventArgs e)
         {
             timer1.Start();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void horas_Click(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) contador -= 60 * 60; else contador += 60 * 60;
+            mostrar();
+        }
+
+        private void minutos_Click(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) contador -= 60; else contador += 60;
+            mostrar();
+        }
+
+
+        private void segundos_Click(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right) contador--; else contador++;
+            mostrar();
+        }
+
+        private void Stop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
         }
 
-        private void horas_Click(object sender, EventArgs e)
-        {
-            contador += 60 * 60;
-            mostrar();
-        }
-
-        private void minutos_Click(object sender, EventArgs e)
-        {
-            contador += 60;
-            mostrar();
-        }
-
-        private void segundos_Click(object sender, EventArgs e)
-        {
-            contador ++;
-            mostrar();
-        }
     }
 }
