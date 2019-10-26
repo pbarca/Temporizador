@@ -86,7 +86,7 @@ namespace Temporizador
 
         private void horas_Click(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Right) contador -= Math.Pow(60,2); else contador += 60 * 60;
+            if (e.Button == MouseButtons.Right) contador -= Math.Pow(60,2); else contador += Math.Pow(60, 2);
             mostrar();
         }
 
