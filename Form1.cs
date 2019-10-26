@@ -63,6 +63,7 @@ namespace Temporizador
 
         private void mostrar()
         {
+            Console.Beep();
             if (contador < 0) contador = 0;
             label1.Text = TimeSpan.FromSeconds(contador).ToString();
         }
