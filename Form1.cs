@@ -8,6 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+// Bibliotecas para adicionar fontes :
+
+using System.IO;
+using System.Reflection;
+using System.Runtime.InteropServices;
+using System.Drawing.Text;
+
+
 namespace Temporizador
 {
     public partial class Form1 : Form
@@ -17,10 +26,31 @@ namespace Temporizador
         public Form1()
         {
             InitializeComponent();
+
+            // Carregar fonte
+            LoadFont();
+            label1.Font = new Font(private_fonts.Families[0], 72);
+            label1.UseCompatibleTextRendering = true;
+        }
+
+        // Função para adicionar fonte LCD :
+        PrivateFontCollection private_fonts = new PrivateFontCollection();
+        private void LoadFont()
+        {
+            string resource = "Temporizador.digital-7-mono.ttf";
+            Stream fontStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(resource);
+            System.IntPtr data = Marshal.AllocCoTaskMem((int)fontStream.Length);
+            byte[] fontdata = new byte[fontStream.Length];
+            fontStream.Read(fontdata, 0, (int)fontStream.Length);
+            Marshal.Copy(fontdata, 0, data, (int)fontStream.Length);
+            private_fonts.AddMemoryFont(data, (int)fontStream.Length);
+            fontStream.Close();
+            Marshal.FreeCoTaskMem(data);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            contador = 0;
             timer1.Interval = 1000;
         }
 
@@ -44,5 +74,6 @@ namespace Temporizador
         {
             timer1.Stop();
         }
+
     }
 }
