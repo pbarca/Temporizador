@@ -33,10 +33,16 @@ namespace Temporizador
             button1.Font = new Font(private_fonts.Families[0], 22);
             button2.Font = new Font(private_fonts.Families[0], 22);
             button3.Font = new Font(private_fonts.Families[0], 22);
+            horas.Font = new Font(private_fonts.Families[0], 16);
+            minutos.Font = new Font(private_fonts.Families[0], 16);
+            segundos.Font = new Font(private_fonts.Families[0], 16);
             label1.UseCompatibleTextRendering = true;
             button1.UseCompatibleTextRendering = true;
             button2.UseCompatibleTextRendering = true;
             button3.UseCompatibleTextRendering = true;
+            horas.UseCompatibleTextRendering = true;
+            minutos.UseCompatibleTextRendering = true;
+            segundos.UseCompatibleTextRendering = true;
 
         }
 
@@ -61,15 +67,20 @@ namespace Temporizador
             timer1.Interval = 1000;
         }
 
+        private void mostrar()
+        {
+            label1.Text = TimeSpan.FromSeconds(contador).ToString();
+        }
         private void button3_Click(object sender, EventArgs e)
         {
             contador = 0;
-            label1.Text = "00:00:00";
+            mostrar();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            label1.Text = TimeSpan.FromSeconds(++contador).ToString();
+            contador++;
+            mostrar();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -82,5 +93,22 @@ namespace Temporizador
             timer1.Stop();
         }
 
+        private void horas_Click(object sender, EventArgs e)
+        {
+            contador += 60 * 60;
+            mostrar();
+        }
+
+        private void minutos_Click(object sender, EventArgs e)
+        {
+            contador += 60;
+            mostrar();
+        }
+
+        private void segundos_Click(object sender, EventArgs e)
+        {
+            contador ++;
+            mostrar();
+        }
     }
 }

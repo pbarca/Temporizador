@@ -34,6 +34,9 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.minutos = new System.Windows.Forms.Button();
+            this.segundos = new System.Windows.Forms.Button();
+            this.horas = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -44,7 +47,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(160)))), ((int)(((byte)(110)))));
             this.button1.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(119, 311);
+            this.button1.Location = new System.Drawing.Point(120, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(140, 59);
             this.button1.TabIndex = 0;
@@ -56,7 +59,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(120)))), ((int)(((byte)(100)))));
             this.button2.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(547, 311);
+            this.button2.Location = new System.Drawing.Point(548, 336);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(140, 59);
             this.button2.TabIndex = 1;
@@ -68,7 +71,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.button3.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(333, 311);
+            this.button3.Location = new System.Drawing.Point(334, 336);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(140, 59);
             this.button3.TabIndex = 2;
@@ -80,24 +83,63 @@
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(160)))), ((int)(((byte)(110)))));
             this.label1.Font = new System.Drawing.Font("OCR A Extended", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(119, 113);
+            this.label1.Location = new System.Drawing.Point(120, 138);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(568, 167);
             this.label1.TabIndex = 3;
             this.label1.Text = "00:00:00";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // minutos
+            // 
+            this.minutos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.minutos.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minutos.Location = new System.Drawing.Point(334, 49);
+            this.minutos.Name = "minutos";
+            this.minutos.Size = new System.Drawing.Size(140, 59);
+            this.minutos.TabIndex = 6;
+            this.minutos.Text = "Minutos";
+            this.minutos.UseVisualStyleBackColor = false;
+            this.minutos.Click += new System.EventHandler(this.minutos_Click);
+            // 
+            // segundos
+            // 
+            this.segundos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.segundos.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.segundos.Location = new System.Drawing.Point(548, 49);
+            this.segundos.Name = "segundos";
+            this.segundos.Size = new System.Drawing.Size(140, 59);
+            this.segundos.TabIndex = 5;
+            this.segundos.Text = "Segundos";
+            this.segundos.UseVisualStyleBackColor = false;
+            this.segundos.Click += new System.EventHandler(this.segundos_Click);
+            // 
+            // horas
+            // 
+            this.horas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
+            this.horas.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.horas.Location = new System.Drawing.Point(120, 49);
+            this.horas.Name = "horas";
+            this.horas.Size = new System.Drawing.Size(140, 59);
+            this.horas.TabIndex = 4;
+            this.horas.Text = "Horas";
+            this.horas.UseVisualStyleBackColor = false;
+            this.horas.Click += new System.EventHandler(this.horas_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.minutos);
+            this.Controls.Add(this.segundos);
+            this.Controls.Add(this.horas);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "Cronómetro";
+            this.Text = "Relógio Digital";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
 
@@ -110,6 +152,9 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button minutos;
+        private System.Windows.Forms.Button segundos;
+        private System.Windows.Forms.Button horas;
     }
 }
 
