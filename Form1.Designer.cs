@@ -42,11 +42,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.Green;
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(160)))), ((int)(((byte)(110)))));
             this.button1.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(120, 359);
+            this.button1.Location = new System.Drawing.Point(119, 311);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 39);
+            this.button1.Size = new System.Drawing.Size(140, 59);
             this.button1.TabIndex = 0;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = false;
@@ -54,11 +54,11 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(120)))), ((int)(((byte)(100)))));
             this.button2.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(342, 359);
+            this.button2.Location = new System.Drawing.Point(547, 311);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(123, 39);
+            this.button2.Size = new System.Drawing.Size(140, 59);
             this.button2.TabIndex = 1;
             this.button2.Text = "Stop";
             this.button2.UseVisualStyleBackColor = false;
@@ -66,11 +66,11 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.White;
+            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(200)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
             this.button3.Font = new System.Drawing.Font("OCR A Extended", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(564, 359);
+            this.button3.Location = new System.Drawing.Point(333, 311);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(123, 39);
+            this.button3.Size = new System.Drawing.Size(140, 59);
             this.button3.TabIndex = 2;
             this.button3.Text = "Reset";
             this.button3.UseVisualStyleBackColor = false;
@@ -80,7 +80,7 @@
             // 
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(160)))), ((int)(((byte)(110)))));
             this.label1.Font = new System.Drawing.Font("OCR A Extended", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(120, 113);
+            this.label1.Location = new System.Drawing.Point(119, 113);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(568, 167);
             this.label1.TabIndex = 3;

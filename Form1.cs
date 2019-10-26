@@ -30,7 +30,14 @@ namespace Temporizador
             // Carregar fonte
             LoadFont();
             label1.Font = new Font(private_fonts.Families[0], 72);
+            button1.Font = new Font(private_fonts.Families[0], 22);
+            button2.Font = new Font(private_fonts.Families[0], 22);
+            button3.Font = new Font(private_fonts.Families[0], 22);
             label1.UseCompatibleTextRendering = true;
+            button1.UseCompatibleTextRendering = true;
+            button2.UseCompatibleTextRendering = true;
+            button3.UseCompatibleTextRendering = true;
+
         }
 
         // Função para adicionar fonte LCD :
