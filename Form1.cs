@@ -1,27 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
+using System.Drawing.Text;
 
 // Bibliotecas para adicionar fontes :
-
 using System.IO;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using System.Drawing.Text;
+using System.Windows.Forms;
 
 
 namespace Temporizador
 {
     public partial class Form1 : Form
     {
-        int contador;
+        private int contador;
 
         public Form1()
         {
@@ -41,7 +33,7 @@ namespace Temporizador
         }
 
         // Função para adicionar fonte LCD :
-        PrivateFontCollection private_fonts = new PrivateFontCollection();
+        private readonly PrivateFontCollection private_fonts = new PrivateFontCollection();
         private void LoadFont()
         {
             string resource = "Temporizador.digital-7-mono.ttf";
