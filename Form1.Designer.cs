@@ -100,7 +100,7 @@
             this.minutos.TabIndex = 6;
             this.minutos.Text = "Minutos";
             this.minutos.UseVisualStyleBackColor = false;
-            this.minutos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.minutos_Click);
+            this.minutos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Acertar_Relogio);
             // 
             // segundos
             // 
@@ -112,7 +112,7 @@
             this.segundos.TabIndex = 5;
             this.segundos.Text = "Segundos";
             this.segundos.UseVisualStyleBackColor = false;
-            this.segundos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.segundos_Click);
+            this.segundos.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Acertar_Relogio);
             // 
             // horas
             // 
@@ -124,7 +124,7 @@
             this.horas.TabIndex = 4;
             this.horas.Text = "Horas";
             this.horas.UseVisualStyleBackColor = false;
-            this.horas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.horas_Click);
+            this.horas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Acertar_Relogio);
             // 
             // Form1
             // 

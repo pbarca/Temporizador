@@ -34,10 +34,10 @@ namespace Temporizador
             LCD(horas, 16); LCD(minutos, 16); LCD(segundos, 16);
         }
 
-        private void LCD(Button objeto, int tamanho)
+        private void LCD(object sender, int tamanho)
         {
-            objeto.Font = new Font(private_fonts.Families[0], tamanho);
-            objeto.UseCompatibleTextRendering = true;
+            ((Button)sender).Font = new Font(private_fonts.Families[0], tamanho);
+            ((Button)sender).UseCompatibleTextRendering = true;
         }
 
         // Função para adicionar fonte LCD :
@@ -84,32 +84,23 @@ namespace Temporizador
             timer1.Start();
         }
 
-        private void horas_Click(object sender, MouseEventArgs e)
-        {
-            int valor = (int)Math.Pow(60, 2);
-            contador += (e.Button == MouseButtons.Left) ? valor : -valor;
-            mostrar();
-        }
-
-        private void minutos_Click(object sender, MouseEventArgs e)
-        {
-            int valor = (int)Math.Pow(60, 1);
-            contador += (e.Button == MouseButtons.Left) ? valor : -valor;
-            mostrar();
-        }
-
-
-        private void segundos_Click(object sender, MouseEventArgs e)
-        {
-            int valor = (int)Math.Pow(60, 0);
-            contador += (e.Button == MouseButtons.Left) ? valor : -valor;
-            mostrar();
-        }
-
         private void Stop_Click(object sender, EventArgs e)
         {
             timer1.Stop();
         }
 
+        private void Acertar_Relogio(object sender, MouseEventArgs e)
+        {
+            int elev = 0;
+            switch (((Button)sender).Name)
+            {
+                case "segundos": elev = 0; break;
+                case "minutos": elev = 1; break;
+                case "horas": elev = 2; break;
+            }
+            int valor = (int)Math.Pow(60, elev);
+            contador += (e.Button == MouseButtons.Left) ? valor : -valor;
+            mostrar();
+        }
     }
 }
