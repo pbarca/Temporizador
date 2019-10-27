@@ -56,7 +56,9 @@ namespace Temporizador
         private void mostrar()
         {
             Console.Beep();
-            if (contador < 0) contador = 0;
+            int dia = 24 * (int)Math.Pow(60, 2);
+            if (contador < 0) contador += dia;
+            if (contador >= dia) contador -= dia;
             label1.Text = TimeSpan.FromSeconds(contador).ToString();
         }
         private void Reset_Click(object sender, EventArgs e)
@@ -94,5 +96,6 @@ namespace Temporizador
             contador += (e.Button == MouseButtons.Left) ? valor : -valor;
             mostrar();
         }
+
     }
 }
