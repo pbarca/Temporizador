@@ -21,7 +21,7 @@ namespace Temporizador
 {
     public partial class Form1 : Form
     {
-        double contador;
+        int contador;
 
         public Form1()
         {
@@ -86,14 +86,14 @@ namespace Temporizador
 
         private void horas_Click(object sender, MouseEventArgs e)
         {
-            double valor = Math.Pow(60, 2);
-            contador += (e.Button == MouseButtons.Left)? valor : -valor;
+            int valor = (int)Math.Pow(60, 2);
+            contador += (e.Button == MouseButtons.Left) ? valor : -valor;
             mostrar();
         }
 
         private void minutos_Click(object sender, MouseEventArgs e)
         {
-            double valor = 60;
+            int valor = (int)Math.Pow(60, 1);
             contador += (e.Button == MouseButtons.Left) ? valor : -valor;
             mostrar();
         }
@@ -101,7 +101,7 @@ namespace Temporizador
 
         private void segundos_Click(object sender, MouseEventArgs e)
         {
-            double valor = 1;
+            int valor = (int)Math.Pow(60, 0);
             contador += (e.Button == MouseButtons.Left) ? valor : -valor;
             mostrar();
         }
